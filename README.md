@@ -30,3 +30,4 @@ All can be replaced through environment variables or static image replacement.
 ## Security notes
 
 Prices/product names/categories are taken only from the server-side catalog. Orders begin as `PENDING`; only authenticated admin routes can approve/reject. Passwords use Werkzeug hashing. CSRF, HttpOnly/SameSite sessions, login rate limiting, ORM queries and server-side authorization are enabled. Never treat the Next button as proof of payment.
+# Ember_SMP_Store
