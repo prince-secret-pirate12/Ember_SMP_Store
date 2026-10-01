@@ -1,3 +1,5 @@
+from dotenv import load_dotenv
+load_dotenv()
 from flask import Flask
 from config import Config
 from extensions import db,login_manager,csrf,socketio,migrate,limiter
@@ -23,4 +25,12 @@ def create_app(config=Config):
         db.session.add(Admin(username=username,password_hash=ph)); db.session.commit(); click.echo('Admin created.')
     return app
 app=create_app()
-if __name__=='__main__': socketio.run(app,debug=True)
+app = create_app()
+
+with app.app_context():
+    print("DATABASE DRIVER:", db.engine.url.drivername)
+
+if __name__ == '__main__':
+    socketio.run(app, host='127.0.0.1', port=5001, debug=True)
+if __name__ == '__main__':
+    socketio.run(app, host='127.0.0.1', port=5001, debug=True)
