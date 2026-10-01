@@ -1,0 +1,1 @@
+<div class="tablewrap"><table><tr><th>Code</th><th>Product</th><th>Amount</th><th>Status</th></tr>{% for o in orders[-8:]|reverse %}<tr><td>{{o.verification_code}}</td><td>{{o.product_name}}</td><td>₹{{o.amount}}</td><td><span class="status {{o.status|lower}}">{{o.status}}</span></td></tr>{% endfor %}</table></div>
